@@ -25,6 +25,11 @@ def send_email_async(msg, sender_email, sender_password):
 def home():
     return render_template("home.html")
 
+@app.route("/health")
+def health():
+    return "OK", 200
+
+
 
 @app.route("/send-message", methods=["POST"])
 def send_message():
