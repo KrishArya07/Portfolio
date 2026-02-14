@@ -5,6 +5,9 @@ import threading
 import os
 
 app = Flask(__name__)
+
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret")
+
 def send_email_async(msg, sender_email, sender_password):
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
@@ -15,7 +18,7 @@ def send_email_async(msg, sender_email, sender_password):
     except Exception as e:
         print("Email error:", e)
 
-app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret")
+
 
 
 @app.route("/")
