@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, flash
 import smtplib
 from email.mime.text import MIMEText
 import threading
-
+import os
 
 app = Flask(__name__)
 def send_email_async(msg, sender_email, sender_password):
@@ -15,7 +15,8 @@ def send_email_async(msg, sender_email, sender_password):
     except Exception as e:
         print("Email error:", e)
 
-app.secret_key = "supersecretkey123"  # required for flash
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret")
+
 
 @app.route("/")
 def home():
@@ -30,9 +31,9 @@ def send_message():
 
 
     # -------- EMAIL CONFIG --------
-    sender_email = "SENDER_EMAIL"      #tumhara gmail
-    sender_password = "EMAIL_PASS"     #gmail app password 
-    receiver_email = "RECEIVER_EMAIL"  #jahan mail aayega
+    sender_email = os.environ.get("SENDER_EMAIL")      #tumhara gmail
+    sender_password = os.environ.get("EMAIL_PASS"  )   #gmail app password 
+    receiver_email = os.environ.get("RECEIVER_EMAIL")  #jahan mail aayega
 
     body = f"""
     New Contact Message 🚀
