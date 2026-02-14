@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krish Arya | Data Scientist & ML Enthusiast</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <span>Data Science & AI</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1> Hi!<span>I'm Krish Arya</span><br>Data Science &<br>Machine Learning<span>ENTHUSIAST</span></h1>
+                    <p>Bridging complex algorithms with human understanding. A minimalist approach to AI concepts with interactive visualizations designed for both technical and non-technical audiences.</p>
+                    <a href="#about" class="cta-button">
+                        Explore AI Concepts <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="ml-visual fade-in">
+                    <div class="visualization-container">
+                        <div class="cube">
+                            <div class="face front"><i class="fas fa-brain"></i></div>
+                            <div class="face back"><i class="fas fa-code"></i></div>
+                            <div class="face right"><i class="fas fa-chart-line"></i></div>
+                            <div class="face left"><i class="fas fa-database"></i></div>
+                            <div class="face top"><i class="fas fa-robot"></i></div>
+                            <div class="face bottom"><i class="fas fa-project-diagram"></i></div>
+                        </div>
+                        <div class="data-points">
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                            <div class="data-point"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p class="section-subtitle">Data Science enthusiast focused on analytics and machine learning</p>
+            
+            <div class="about-content">
+               <div class="about-text">
+<p>
+    I am a Data Science enthusiast with a strong foundation in Python, SQL,
+    and Machine Learning. I enjoy analyzing data to uncover patterns and
+    generate meaningful insights.
+  </p>
+
+  <p>
+    I have hands-on experience with data analysis, data visualization,
+    and building basic machine learning models. I also work with Flask
+    to create simple data-driven web applications.
+  </p>
+    <p>
+    I am continuously improving my skills by working on real-world datasets 
+    and building practical projects that solve meaningful problems. My goal 
+    is to grow as a data professional by combining analytical thinking, 
+    problem-solving abilities, and modern machine learning techniques.
+    </p>
+    <a href="{{ url_for('static', filename='KRISH_ARYA_CV.pdf') }}" 
+          class="cv-btn" 
+          download>
+          <i class="fas fa-download"></i> Download CV
+       </a>
+
+        </div>
+                <div class="ai-concepts">
+                    <div class="concept-card fade-in">
+                        <div class="concept-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        
+                        <h3>Machine Learning</h3>
+                        <p>Experience with regression, classification, and model evaluation using Scikit-learn.</p>
+                    </div>
+                    
+                    <div class="concept-card fade-in">
+                        <div class="concept-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Data Analysis</h3>
+                        <p>Hands-on work with Pandas, NumPy, and exploratory data analysis (EDA) on real datasets.</p>
+
+                    </div>
+                    
+                    <div class="concept-card fade-in">
+                        <div class="concept-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools & FramsWorks</h3>
+                        <p>Building basic web applications using Flask, Streamlit, Git, GitHub, PowerBI, Tableau, VSCode, MySQL, PostgreSQL, and Jupyter Notebook.</p>
+
+                    </div>
+                    
+                    <div class="concept-card fade-in">
+                        <div class="concept-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Visualization</h3>
+                        <p>Creating clear visual insights using Matplotlib and Seaborn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Skills Section -->
+<section class="section skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <p class="section-subtitle">
+      Technologies and tools I work with in data science
+    </p>
+
+    <div class="skills-container">
+
+      <!-- Programming -->
+      <div class="skill-card fade-in">
+        <div class="skill-header">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="skill-info">
+            <h3>Programming</h3>
+            <p>Core Languages</p>
+          </div>
+        </div>
+        <p>Python, SQL, C, C++</p>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="85"></div>
+        </div>
+      </div>
+
+      <!-- Data Analysis -->
+      <div class="skill-card fade-in">
+        <div class="skill-header">
+          <div class="skill-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="skill-info">
+            <h3>Data Analysis</h3>
+            <p>EDA & Insights</p>
+          </div>
+        </div>
+        <p>Pandas, NumPy, Exploratory Data Analysis (EDA)</p>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="90"></div>
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="skill-card fade-in">
+        <div class="skill-header">
+          <div class="skill-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="skill-info">
+            <h3>Machine Learning</h3>
+            <p>Models & Evaluation</p>
+          </div>
+        </div>
+        <p>Regression, Classification, Model Evaluation, Scikit-learn</p>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="80"></div>
+        </div>
+      </div>
+
+      <!-- Python Modules -->
+      <div class="skill-card fade-in">
+        <div class="skill-header">
+          <div class="skill-icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="skill-info">
+            <h3>Python Modules</h3>
+            <p>Libraries I Use</p>
+          </div>
+        </div>
+        <p>
+          NumPy, Pandas, Matplotlib, Seaborn,
+          Scikit-learn, TensorFlow, PyTorch,Flask, Pickle, OS, Math, Keras, Joblib 
+        </p>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="85"></div>
+        </div>
+      </div>
+
+      <!-- Tools & Frameworks -->
+      <div class="skill-card fade-in">
+        <div class="skill-header">
+          <div class="skill-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="skill-info">
+            <h3>Tools & Frameworks</h3>
+            <p>Development & Analysis</p>
+          </div>
+        </div>
+        <p>Flask, Git, GitHub, Jupyter Notebook, VS Code, MySQL</p>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="87"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    
+ <!-- Projects Section -->
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title">My <span>Project</span></h2>
+    <p class="section-subtitle">
+      Real-world machine learning application
+    </p>
+
+    <div class="projects-container">
+
+      <div class="project-card fade-in">
+        <div class="project-header">
+    <img src="{{ url_for('static', filename='images/IMG-20251031-WA0008.jpg') }}" 
+         alt="AgriSmart Project">
+</div>
+
+
+        <div class="project-content">
+          <h3>AgriSmart – Smart Agriculture Prediction System</h3>
+
+          <p>
+            AgriSmart is a machine learning based web application that helps farmers 
+            predict suitable crops and analyze agricultural data using environmental 
+            and soil parameters.
+          </p>
+
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Machine Learning</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">Data Analysis</span>
+          </div>
+
+          <!-- <div class="project-buttons">
+            <a href="https://github.com/KrishArya07/AgriSmart"
+               target="_blank"
+               class="project-btn github-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+
+            <a href="#"
+               target="_blank"
+               class="project-btn live-btn">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div> -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    
+    <!-- Contact Section -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <p class="section-subtitle">
+      Feel free to reach out for opportunities or collaborations
+    </p>
+
+    <div class="contact-content">
+
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>
+          I'm always open to discussing new projects, creative ideas,
+          or opportunities to be part of your vision.
+        </p>
+
+        <div class="contact-methods">
+
+  <!-- Email -->
+  <a href="mailto:krisharya.official@gmail.com" class="contact-method">
+    <div class="contact-icon">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="contact-details">
+      <h4>Email</h4>
+      <p>krisharya.official@gmail.com</p>
+    </div>
+  </a>
+
+  <!-- LinkedIn -->
+<a href="https://www.linkedin.com/in/krish-arya-60573a318" target="_blank" class="contact-method">
+  <div class="contact-icon">
+    <i class="fab fa-linkedin"></i>
+  </div>
+  <div class="contact-details">
+    <h4>LinkedIn</h4>
+    <p>linkedin.com/in/krish-arya-60573a318</p>
+  </div>
+</a>
+
+
+  <!-- GitHub -->
+  <a href="https://github.com/KrishArya07 " target="_blank" class="contact-method">
+    <div class="contact-icon">
+      <i class="fab fa-github"></i>
+    </div>
+    <div class="contact-details">
+      <h4>GitHub</h4>
+      <p>github.com/KrishArya07 </p>
+    </div>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919587701191" target="_blank" class="contact-method">
+    <div class="contact-icon">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="contact-details">
+      <h4>WhatsApp</h4>
+      <p>Chat on WhatsApp</p>
+    </div>
+  </a>
+
+</div>
+
+      </div>
+
+      <div class="contact-form">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-message">
+        {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+       <form id="contactForm">
+
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="Your name"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="Your email"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      class="form-control"
+      placeholder="Your message"
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    Send Message <i class="fas fa-paper-plane"></i>
+  </button>
+
+</form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+      <span>AI_ML</span>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Your Name. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const progressBars = document.querySelectorAll(".skill-progress");
+    progressBars.forEach(bar => {
+      const value = bar.getAttribute("data-width");
+      bar.style.width = value + "%";
+    });
+  });
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch("/send-message", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        let messageDiv = document.createElement("div");
+        messageDiv.className = "flash-message";
+
+        if (data.status === "success") {
+            messageDiv.innerText = "Message sent successfully! 🚀";
+            form.reset(); // ✅ form clear
+        } else {
+            messageDiv.innerText = "Something went wrong. Please try again.";
+            messageDiv.style.background = "rgba(239, 68, 68, 0.15)";
+            messageDiv.style.color = "#ef4444";
+        }
+
+        form.prepend(messageDiv);
+
+        // ✅ Auto remove after 3 seconds
+        setTimeout(() => {
+            messageDiv.style.opacity = "0";
+            messageDiv.style.transition = "opacity 0.5s ease";
+            setTimeout(() => messageDiv.remove(), 500);
+        }, 3000);
+
+    })
+    .catch(error => {
+        alert("Error sending message.");
+    });
+});
+</script>
