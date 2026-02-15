@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, flash
 import smtplib
 from email.mime.text import MIMEText
 import os
+import requests
 
 app = Flask(__name__)
 
@@ -17,46 +18,53 @@ def health():
 
 
 
+
 @app.route("/send-message", methods=["POST"])
 def send_message():
     name = request.form.get("name")
     email = request.form.get("email")
     message = request.form.get("message")
 
+    api_key = os.environ.get("BREVO_API_KEY")
+    sender_email = os.environ.get("SENDER_EMAIL")
 
-    # -------- EMAIL CONFIG --------
-    sender_email = os.environ.get("SENDER_EMAIL")      #tumhara gmail
-    sender_password = os.environ.get("BREVO_SMTP_KEY")   #gmail app password 
-    receiver_email = sender_email  #jahan mail aayega
+    url = "https://api.brevo.com/v3/smtp/email"
 
-    body = f"""
-    New Contact Message 🚀
+    headers = {
+        "accept": "application/json",
+        "api-key": api_key,
+        "content-type": "application/json"
+    }
 
-    Name: {name}
-    Email: {email}
-
-    Message:
-    {message}
-    """
-
-    msg = MIMEText(body)
-    msg["Subject"] = f"New Portfolio Message from {name}"
-    msg["From"] = sender_email
-    msg["To"] = receiver_email
-    msg["Reply-To"] = email
+    data = {
+        "sender": {
+            "name": "Portfolio Contact",
+            "email": sender_email
+        },
+        "to": [
+            {
+                "email": sender_email,
+                "name": "Krish"
+            }
+        ],
+        "subject": f"New Portfolio Message from {name}",
+        "htmlContent": f"""
+        <h3>New Contact Message 🚀</h3>
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Message:</strong><br>{message}</p>
+        """,
+        "replyTo": {
+            "email": email
+        }
+    }
 
     try:
-         server = smtplib.SMTP("smtp-relay.brevo.com", 587)
-         server.starttls()
-         server.login(sender_email, sender_password)
-         server.send_message(msg)
-         server.quit()
-         return {"status": "success"}
-    
+        response = requests.post(url, headers=headers, json=data)
+        return {"status": "success"}
     except Exception as e:
-        print("Brevo error:", e)
+        print("Brevo API error:", e)
         return {"status": "error"}
-
-
+    
 if __name__ == "__main__":
     app.run(debug=True)
