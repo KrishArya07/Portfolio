@@ -1,22 +1,19 @@
-from flask import Flask, render_template, request, redirect, flash
-import smtplib
-from email.mime.text import MIMEText
+from flask import Flask, render_template, request
 import os
 import requests
 
 app = Flask(__name__)
-
 app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret")
+
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
+
 @app.route("/health")
 def health():
     return "OK", 200
-
-
 
 
 @app.route("/send-message", methods=["POST"])
@@ -27,6 +24,9 @@ def send_message():
 
     api_key = os.environ.get("BREVO_API_KEY")
     sender_email = os.environ.get("SENDER_EMAIL")
+
+    if not api_key or not sender_email:
+        return {"status": "error", "message": "Missing environment variables"}
 
     url = "https://api.brevo.com/v3/smtp/email"
 
@@ -61,10 +61,17 @@ def send_message():
 
     try:
         response = requests.post(url, headers=headers, json=data)
-        return {"status": "success"}
+        print(response.status_code, response.text)
+
+        if response.status_code == 201:
+            return {"status": "success"}
+        else:
+            return {"status": "error", "details": response.text}
+
     except Exception as e:
         print("Brevo API error:", e)
         return {"status": "error"}
     
+
 if __name__ == "__main__":
     app.run(debug=True)
